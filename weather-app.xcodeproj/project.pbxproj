@@ -13,7 +13,7 @@
 		A66A10B81C8627CE00D8A20E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66A10B61C8627CE00D8A20E /* Main.storyboard */; };
 		A66A10BA1C8627CE00D8A20E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66A10B91C8627CE00D8A20E /* Assets.xcassets */; };
 		A66A10BD1C8627CE00D8A20E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66A10BB1C8627CE00D8A20E /* LaunchScreen.storyboard */; };
-		A66A10C91C862C0700D8A20E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66A10C81C862C0700D8A20E /* File.swift */; };
+		A66A10C91C862C0700D8A20E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66A10C81C862C0700D8A20E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		A66A10B91C8627CE00D8A20E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A66A10BC1C8627CE00D8A20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A66A10BE1C8627CE00D8A20E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A66A10C81C862C0700D8A20E /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		A66A10C81C862C0700D8A20E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BE7665E2B860D3B3D3ABAA12 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DE3F1AAF804F4A7A2B00DDC5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,7 +118,7 @@
 		A66A10C71C862BCE00D8A20E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A66A10C81C862C0700D8A20E /* File.swift */,
+				A66A10C81C862C0700D8A20E /* Constants.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -247,7 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A66A10B51C8627CE00D8A20E /* ViewController.swift in Sources */,
-				A66A10C91C862C0700D8A20E /* File.swift in Sources */,
+				A66A10C91C862C0700D8A20E /* Constants.swift in Sources */,
 				A66A10B31C8627CE00D8A20E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

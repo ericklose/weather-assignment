@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Constants.swift
 //  weather-app
 //
 //  Created by Eric Klose on 3/1/16.
