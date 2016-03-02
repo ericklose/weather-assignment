@@ -12,14 +12,20 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+        Forecast(city: "02111,us")
+        
+        print("URL: \(URL)")
+        
+   //     Forecast.downloadWeatherForecast { () -> () in
+            //called when download done
+            //self.updateUI()
+    
+    
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    
 
 }
 

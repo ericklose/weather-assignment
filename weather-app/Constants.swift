@@ -8,7 +8,7 @@
 
 import Foundation
 
-let URL_BASE = "api.openweathermap.org/data/2.5/forecast?appid=3c257522fc193a6750f673e02e05bd16"
+let URL_BASE = "api.openweathermap.org/data/2.5/forecast?appid=3c257522fc193a6750f673e02e05bd16&units=metric"
 let URL_QUERY_TYPE = "&zip="
 let URL_LOCATION = "02111,us"
 

@@ -14,6 +14,7 @@
 		A66A10BA1C8627CE00D8A20E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A66A10B91C8627CE00D8A20E /* Assets.xcassets */; };
 		A66A10BD1C8627CE00D8A20E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A66A10BB1C8627CE00D8A20E /* LaunchScreen.storyboard */; };
 		A66A10C91C862C0700D8A20E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66A10C81C862C0700D8A20E /* Constants.swift */; };
+		A6A77EBE1C863A0C0005ACA7 /* forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A77EBD1C863A0C0005ACA7 /* forecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A66A10BC1C8627CE00D8A20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A66A10BE1C8627CE00D8A20E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A66A10C81C862C0700D8A20E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A6A77EBD1C863A0C0005ACA7 /* forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forecast.swift; sourceTree = "<group>"; };
 		BE7665E2B860D3B3D3ABAA12 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DE3F1AAF804F4A7A2B00DDC5 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		A66A10C61C862BC100D8A20E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A6A77EBD1C863A0C0005ACA7 /* forecast.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A77EBE1C863A0C0005ACA7 /* forecast.swift in Sources */,
 				A66A10B51C8627CE00D8A20E /* ViewController.swift in Sources */,
 				A66A10C91C862C0700D8A20E /* Constants.swift in Sources */,
 				A66A10B31C8627CE00D8A20E /* AppDelegate.swift in Sources */,
