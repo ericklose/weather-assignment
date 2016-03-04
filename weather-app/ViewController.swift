@@ -9,23 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var bostonForecast: Forecast!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        Forecast(city: "02111,us")
         
-        print("URL: \(URL)")
+      
+        bostonForecast = Forecast(city: "02111,us")
         
-   //     Forecast.downloadWeatherForecast { () -> () in
+        
+        bostonForecast.downloadWeatherForecast { () -> () in
             //called when download done
             //self.updateUI()
-    
-    
+            print("test")
+            
+        }
+        
+        print("outer VDL")
+        
+        
     }
-
-
     
-
 }
-

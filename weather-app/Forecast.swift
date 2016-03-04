@@ -67,21 +67,33 @@ class Forecast {
         
     }
     
+    typealias DownloadComplete = () -> ()
     
     func downloadWeatherForecast(completed: DownloadComplete) {
         
-        let url = NSURL(string: _URL)!
+//        let url = NSURL(string: _URL)!
+
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?id=4317656&APPID=3c257522fc193a6750f673e02e05bd16")!
+        
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
+            print(response.result)
+            print(result.value.debugDescription)
+            print("hi5")
+            print(url)
+            
+            
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                
-                if let weather = dict["weight"] as? String {
-                    self._weight = weight
+                print("hi")
+                if let _currentTemp = dict["temp"] as? String {
+                    self._currentTemp = _currentTemp
+                    print("\(_currentTemp)")
                 }
                 
-                if let height = dict["height"] as? String {
-                    self._height = height
+                if let _weather = dict["description"] as? String {
+                    self._weather = _weather
+                    print("\(_weather)")
                 }
                 
 
@@ -104,5 +116,5 @@ class Forecast {
         }
     }
     
-    
+
 }
