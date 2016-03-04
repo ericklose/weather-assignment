@@ -28,8 +28,6 @@ class ViewController: UIViewController {
             
         }
         
-        print("outer VDL")
-        
         
     }
     

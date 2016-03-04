@@ -16,7 +16,7 @@ class Forecast {
     private var _currentTemp: String!
     private var _tempHigh: String!
     private var _tempLow: String!
-    private var _weather: String!
+    private var _currentWeather: String!
     
     var currentTemp: String {
         if _currentTemp == nil {
@@ -39,11 +39,11 @@ class Forecast {
         return _tempLow
     }
     
-    var weather: String {
-        if _weather == nil {
-            _weather = ""
+    var currentWeather: String {
+        if _currentWeather == nil {
+            _currentWeather = ""
         }
-        return _weather
+        return _currentWeather
     }
     
     var city: String {
@@ -71,50 +71,52 @@ class Forecast {
     
     func downloadWeatherForecast(completed: DownloadComplete) {
         
-//        let url = NSURL(string: _URL)!
-
-        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?id=4317656&APPID=3c257522fc193a6750f673e02e05bd16")!
+        let url = NSURL(string: _URL)!
         
         Alamofire.request(.GET, url).responseJSON { response in
             let result = response.result
             
-            print(response.result)
-            print(result.value.debugDescription)
-            print("hi5")
-            print(url)
-            
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                print("hi")
-                if let _currentTemp = dict["temp"] as? String {
-                    self._currentTemp = _currentTemp
-                    print("\(_currentTemp)")
+                
+                if let main = dict["main"] as? Dictionary<String, AnyObject> {
+                    
+                    if let temp = main["temp"] as? Double {
+                        self._currentTemp = "\(temp)"
+                        print("temp: \(self._currentTemp)")
+                    }
+                    
+                    if let temp_min = main["temp_min"] as? Double {
+                        self._tempLow = "\(temp_min)"
+                        print("min temp: \(self._tempLow)")
+                    }
+                    
+                    if let temp_max = main["temp_max"] as? Double {
+                        self._tempHigh = "\(temp_max)"
+                        print("max temp: \(self._tempHigh)")
+                    }
                 }
                 
-                if let _weather = dict["description"] as? String {
-                    self._weather = _weather
-                    print("\(_weather)")
+                
+                if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
+                    if let description = weather[0]["description"] {
+                        self._currentWeather = "first: \(description.capitalizedString)"
+                        print("weather: \(self._currentWeather)")
+                    }
+                    if  weather.count > 1 {
+                        for var x = 1; x < weather.count; x++ {
+                            if let description = weather[x]["description"] {
+                                self._currentWeather! += "[\(x)]: \(description.capitalizedString)"
+                                print("weather: \(self._currentWeather)")
+                            }
+                        }
+                    }
                 }
-                
-
-                
-//                if let moves = dict["moves"] as? [Dictionary<String, AnyObject>] where moves.count > 0 {
-//                    if let name = moves[0]["name"] {
-//                        self._pokeMoves = name.capitalizedString
-//                    }
-//                    if moves.count > 1 {
-//                        for var x = 1; x < moves.count; x++ {
-//                            if let name = moves[x]["name"] {
-//                                self._pokeMoves! += ", \(name.capitalizedString)"
-//                            }
-//                        }
-//                    }
-//                }
-                
-                
             }
+            
+            
+            
+            
         }
     }
-    
-
 }
