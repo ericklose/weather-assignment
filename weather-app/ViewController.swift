@@ -25,19 +25,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
         bostonForecast = Forecast(city: "02111,us")
-        //updateUI()
         
         bostonForecast.downloadWeatherForecast { () -> () in
             //called when download done
             self.updateUI()
             print("download complete")
         }
-        
-        
-    }
     
+    }
     
     func updateUI() {
         currentTempLbl.text = bostonForecast.currentTemp
