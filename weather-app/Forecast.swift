@@ -17,6 +17,14 @@ class Forecast {
     private var _tempHigh: String!
     private var _tempLow: String!
     private var _currentWeather: String!
+    private var _weatherIcon: String!
+    
+    var weatherIcon: String {
+        if _weatherIcon == nil {
+            _weatherIcon = ""
+        }
+        return _weatherIcon
+    }
     
     var currentTemp: String {
         if _currentTemp == nil {
@@ -93,10 +101,16 @@ class Forecast {
                         self._tempHigh = "\(temp_max)"
                         print("max temp: \(self._tempHigh)")
                     }
+                    
                 }
                 
                 
                 if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
+                    if let weatherIcon = weather[0]["id"] {
+                        self._weatherIcon = "\(weatherIcon).png"
+                        print("icon: \(self.weatherIcon)")
+                    }
+                    
                     if let description = weather[0]["description"] {
                         self._currentWeather = "\(description.capitalizedString)"
                         print("weather: \(self._currentWeather)")
@@ -104,7 +118,7 @@ class Forecast {
                     if  weather.count > 1 {
                         for var x = 1; x < weather.count; x++ {
                             if let description = weather[x]["description"] {
-                                self._currentWeather! += "[\(x)]: \(description.capitalizedString)"
+                                self._currentWeather! += ", \(description.capitalizedString)"
                                 print("weather: \(self._currentWeather)")
                             }
                         }

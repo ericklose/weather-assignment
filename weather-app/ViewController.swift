@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         highTempLbl.text = bostonForecast.tempHigh
         lowTempLbl.text = bostonForecast.tempLow
         weatherDescription.text = bostonForecast.currentWeather
+        let img = UIImage(named: "\(bostonForecast.weatherIcon)")
+        weatherImg.image = img
     }
     
 }
