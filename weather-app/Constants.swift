@@ -16,5 +16,6 @@ let URL = "\(URL_BASE)\(URL_QUERY_TYPE)\(URL_LOCATION)"
 
 
 
+typealias DownloadComplete = () -> ()
 
 

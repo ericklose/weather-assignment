@@ -67,8 +67,6 @@ class Forecast {
         
     }
     
-    typealias DownloadComplete = () -> ()
-    
     func downloadWeatherForecast(completed: DownloadComplete) {
         
         let url = NSURL(string: _URL)!
@@ -100,7 +98,7 @@ class Forecast {
                 
                 if let weather = dict["weather"] as? [Dictionary<String, AnyObject>] {
                     if let description = weather[0]["description"] {
-                        self._currentWeather = "first: \(description.capitalizedString)"
+                        self._currentWeather = "\(description.capitalizedString)"
                         print("weather: \(self._currentWeather)")
                     }
                     if  weather.count > 1 {
@@ -113,7 +111,7 @@ class Forecast {
                     }
                 }
             }
-            
+            completed()
             
             
             

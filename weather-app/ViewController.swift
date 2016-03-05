@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    @IBOutlet weak var weatherImg: UIImageView!
+    @IBOutlet weak var currentTempLbl: UILabel!
+    @IBOutlet weak var locationLbl: UILabel!
+    @IBOutlet weak var highTempLbl: UILabel!
+    @IBOutlet weak var lowTempLbl: UILabel!
+    @IBOutlet weak var weatherDescription: UILabel!
+    
     var bostonForecast: Forecast!
     
     
@@ -19,16 +27,24 @@ class ViewController: UIViewController {
         
       
         bostonForecast = Forecast(city: "02111,us")
-        
+        //updateUI()
         
         bostonForecast.downloadWeatherForecast { () -> () in
             //called when download done
-            //self.updateUI()
-            print("test")
-            
+            self.updateUI()
+            print("download complete")
         }
         
         
+    }
+    
+    
+    func updateUI() {
+        currentTempLbl.text = bostonForecast.currentTemp
+        locationLbl.text = bostonForecast.city
+        highTempLbl.text = bostonForecast.tempHigh
+        lowTempLbl.text = bostonForecast.tempLow
+        weatherDescription.text = bostonForecast.currentWeather
     }
     
 }
